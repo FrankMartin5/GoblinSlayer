@@ -10,14 +10,20 @@ abstract class Monster {
     private int hpLevel;
     private String attackType;
 
-
-    // Business methods
-    public void attack() {
-
+    public Monster(String typeofMonster, int powerLevel, int hpLevel, String attackType) {
+        this.typeofMonster = typeofMonster;
+        this.powerLevel = powerLevel;
+        this.hpLevel = hpLevel;
+        this.attackType = attackType;
     }
 
-    public void defend() {
+    // Business methods
+    public int attack() {
+        return 0;
+    }
 
+    public int defend() {
+        return 0;
     }
 
     public void run() {
