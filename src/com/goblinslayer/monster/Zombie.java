@@ -12,21 +12,26 @@ class Zombie extends Monster {
 
     //Constructor Method
     public Zombie(String typeofMonster, int powerLevel, int hpLevel, String attackType) {
-        this.typeofMonster = typeofMonster;
-        this.powerLevel = powerLevel;
-        this.hpLevel = hpLevel;
-        this.attackType = attackType;
+        super(typeofMonster, powerLevel, hpLevel, attackType);
     }
 
     // Business Methods
     @Override
-    public void attack() {
-        super.attack();
+    public int attack() {
+        int min = 0;
+        int max = 5;
+        int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
+        // This is the *critical* modifier, adds additional damage on top of power
+        return powerLevel + random_int;
     }
 
     @Override
-    public void defend() {
-        super.defend();
+    public int defend() {
+        int min = 3;
+        int max = 10;
+        // generates a random defence between 3-10
+        int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
+        return random_int;
     }
 
     @Override
@@ -95,7 +100,6 @@ class Zombie extends Monster {
     @Override
     public String toString() {
         return "com.goblinslayer.monster.Zombie{" +
-                "typeofMonster='" + getTypeofMonster() + '\'' +
                 ", powerLevel=" + getPowerLevel() +
                 ", hpLevel=" + getHpLevel() +
                 ", attackType='" + getAttackType() + '\'' +
