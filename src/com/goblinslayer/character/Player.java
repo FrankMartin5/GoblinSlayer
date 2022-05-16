@@ -2,16 +2,21 @@ package com.goblinslayer.character;
 
 
 public class Player extends Character{
+
     private String name;
     private int hp;
     private Weapon weapon;
+    private Integer defense;
 
+    public Player() {
+    }
 
     public Player(String name, int hp, Weapon weapon) {
         this.name = name;
         this.hp = hp;
         this.weapon = weapon;
     }
+
 
     // Business Methods
     @Override
