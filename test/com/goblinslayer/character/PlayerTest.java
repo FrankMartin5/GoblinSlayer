@@ -1,3 +1,5 @@
+package com.goblinslayer.character;
+
 import com.goblinslayer.character.Player;
 import com.goblinslayer.character.Weapon;
 import org.junit.Before;

@@ -8,9 +8,16 @@ public class Monster extends Character {
     private int hp;
     private MonsterType monsterType;
 
+    // Constructors
+    public Monster() {
+    }
+
+    public Monster(int hp, MonsterType monsterType) {
+        this.hp = hp;
+        this.monsterType = monsterType;
+    }
+
     // Business methods
-
-
     @Override
     public int attack(Character opponent) {
         int min = 0;
