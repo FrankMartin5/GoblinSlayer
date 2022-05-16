@@ -1,6 +1,8 @@
+package com.goblinslayer.monster;
+
 import java.util.Objects;
 
-class Goblin extends Monster {
+class Zombie extends Monster {
 
     // Attributes
     private String typeofMonster;
@@ -9,7 +11,7 @@ class Goblin extends Monster {
     private String attackType;
 
     //Constructor Method
-    public Goblin(String typeofMonster, int powerLevel, int hpLevel, String attackType) {
+    public Zombie(String typeofMonster, int powerLevel, int hpLevel, String attackType) {
         this.typeofMonster = typeofMonster;
         this.powerLevel = powerLevel;
         this.hpLevel = hpLevel;
@@ -74,14 +76,14 @@ class Goblin extends Monster {
         this.attackType = attackType;
     }
 
-    // Equals and Hashcode
+    //Equals and Hashcode
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        Goblin goblin = (Goblin) o;
-        return powerLevel == goblin.powerLevel && hpLevel == goblin.hpLevel && typeofMonster.equals(goblin.typeofMonster) && attackType.equals(goblin.attackType);
+        Zombie zombie = (Zombie) o;
+        return powerLevel == zombie.powerLevel && hpLevel == zombie.hpLevel && typeofMonster.equals(zombie.typeofMonster) && attackType.equals(zombie.attackType);
     }
 
     @Override
@@ -92,7 +94,7 @@ class Goblin extends Monster {
     // toString
     @Override
     public String toString() {
-        return "Goblin{" +
+        return "com.goblinslayer.monster.Zombie{" +
                 "typeofMonster='" + getTypeofMonster() + '\'' +
                 ", powerLevel=" + getPowerLevel() +
                 ", hpLevel=" + getHpLevel() +

@@ -1,6 +1,8 @@
+package com.goblinslayer.monster;
+
 import java.util.Objects;
 
-class Zombie extends Monster {
+class Werewolf extends Monster {
 
     // Attributes
     private String typeofMonster;
@@ -8,8 +10,8 @@ class Zombie extends Monster {
     private int hpLevel;
     private String attackType;
 
-    //Constructor Method
-    public Zombie(String typeofMonster, int powerLevel, int hpLevel, String attackType) {
+    // Constructor Method
+    public Werewolf(String typeofMonster, int powerLevel, int hpLevel, String attackType) {
         this.typeofMonster = typeofMonster;
         this.powerLevel = powerLevel;
         this.hpLevel = hpLevel;
@@ -80,8 +82,8 @@ class Zombie extends Monster {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        Zombie zombie = (Zombie) o;
-        return powerLevel == zombie.powerLevel && hpLevel == zombie.hpLevel && typeofMonster.equals(zombie.typeofMonster) && attackType.equals(zombie.attackType);
+        Werewolf werewolf = (Werewolf) o;
+        return powerLevel == werewolf.powerLevel && hpLevel == werewolf.hpLevel && typeofMonster.equals(werewolf.typeofMonster) && attackType.equals(werewolf.attackType);
     }
 
     @Override
@@ -92,7 +94,7 @@ class Zombie extends Monster {
     // toString
     @Override
     public String toString() {
-        return "Zombie{" +
+        return "com.goblinslayer.monster.Werewolf{" +
                 "typeofMonster='" + getTypeofMonster() + '\'' +
                 ", powerLevel=" + getPowerLevel() +
                 ", hpLevel=" + getHpLevel() +

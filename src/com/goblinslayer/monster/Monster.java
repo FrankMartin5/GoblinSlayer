@@ -1,3 +1,5 @@
+package com.goblinslayer.monster;
+
 import java.util.Objects;
 
 abstract class Monster {
@@ -73,7 +75,7 @@ abstract class Monster {
 
     @Override
     public String toString() {
-        return "Monster{" +
+        return "com.goblinslayer.monster.Monster{" +
                 "typeofMonster='" + typeofMonster + '\'' +
                 ", powerLevel=" + powerLevel +
                 ", hpLevel=" + hpLevel +

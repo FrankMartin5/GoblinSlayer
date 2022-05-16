@@ -1,6 +1,8 @@
+package com.goblinslayer.monster;
+
 import java.util.Objects;
 
-class Werewolf extends Monster {
+class Goblin extends Monster {
 
     // Attributes
     private String typeofMonster;
@@ -8,8 +10,8 @@ class Werewolf extends Monster {
     private int hpLevel;
     private String attackType;
 
-    // Constructor Method
-    public Werewolf(String typeofMonster, int powerLevel, int hpLevel, String attackType) {
+    //Constructor Method
+    public Goblin(String typeofMonster, int powerLevel, int hpLevel, String attackType) {
         this.typeofMonster = typeofMonster;
         this.powerLevel = powerLevel;
         this.hpLevel = hpLevel;
@@ -74,14 +76,14 @@ class Werewolf extends Monster {
         this.attackType = attackType;
     }
 
-    //Equals and Hashcode
+    // Equals and Hashcode
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        Werewolf werewolf = (Werewolf) o;
-        return powerLevel == werewolf.powerLevel && hpLevel == werewolf.hpLevel && typeofMonster.equals(werewolf.typeofMonster) && attackType.equals(werewolf.attackType);
+        Goblin goblin = (Goblin) o;
+        return powerLevel == goblin.powerLevel && hpLevel == goblin.hpLevel && typeofMonster.equals(goblin.typeofMonster) && attackType.equals(goblin.attackType);
     }
 
     @Override
@@ -92,7 +94,7 @@ class Werewolf extends Monster {
     // toString
     @Override
     public String toString() {
-        return "Werewolf{" +
+        return "com.goblinslayer.monster.Goblin{" +
                 "typeofMonster='" + getTypeofMonster() + '\'' +
                 ", powerLevel=" + getPowerLevel() +
                 ", hpLevel=" + getHpLevel() +
