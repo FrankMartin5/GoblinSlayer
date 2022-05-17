@@ -2,7 +2,7 @@ package com.goblinslayer.shop;
 
 import java.util.Objects;
 
-class Armor {
+public class Armor {
 
     // Fields
     private Integer id;
