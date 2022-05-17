@@ -14,4 +14,5 @@ public enum MonsterType {
     public int getPower() {
         return power;
     }
+
 }

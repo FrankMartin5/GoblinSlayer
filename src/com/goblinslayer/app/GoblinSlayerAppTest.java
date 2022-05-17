@@ -1,16 +1,17 @@
 package com.goblinslayer.app;
 
+import com.goblinslayer.character.Monster;
 import com.goblinslayer.character.Player;
 import com.goblinslayer.character.Weapon;
 
 import java.util.Scanner;
 
-public class GoblinSlayerApp {
+public class GoblinSlayerAppTest {
     Player p1 = new Player();
     Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        GoblinSlayerApp app = new GoblinSlayerApp();
+        GoblinSlayerAppTest app = new GoblinSlayerAppTest();
         app.createPlayer();
     }
 
@@ -46,5 +47,15 @@ public class GoblinSlayerApp {
         }
         p1 = new Player(name, 50, p1.getWeapon());
         System.out.println("You player's stats are: " + p1.toString());
+    }
+
+    public void monsterFight() {
+        System.out.println("After stopping by the famed Armor Shop you are now ready to slay Goblins\n");
+        System.out.println("We have now entered a mysterious cave and you notice the princess's shoe\n\n");
+        System.out.println("Oh No looks like you're being attacked!");
+
+
+        Monster randomMonster = new Monster();
+
     }
 }
