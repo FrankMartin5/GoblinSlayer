@@ -1,9 +1,11 @@
 package com.goblinslayer.app;
 
 import com.goblinslayer.character.Monster;
+import com.goblinslayer.character.MonsterType;
 import com.goblinslayer.character.Player;
 import com.goblinslayer.character.Weapon;
 
+import javax.swing.text.SimpleAttributeSet;
 import java.util.Scanner;
 
 public class GoblinSlayerAppTest {
@@ -50,12 +52,29 @@ public class GoblinSlayerAppTest {
     }
 
     public void monsterFight() {
-        System.out.println("After stopping by the famed Armor Shop you are now ready to slay Goblins\n");
-        System.out.println("We have now entered a mysterious cave and you notice the princess's shoe\n\n");
-        System.out.println("Oh No looks like you're being attacked!");
+        Monster m1 = new Monster();
+        System.out.println("After stopping by the famed Armor Shop you are now ready to slay Goblins and save the Princess\n");
+        System.out.println("What route will you take as you enter the cave?  [1]Left, [2]Middle, [3] Right");
+
+        String selection = scanner.next();
+        switch (selection) {
+            case ("1"):
+                m1 = new Monster(50, MonsterType.GOBLIN);
+                break;
+            case ("2"):
+                m1 = new Monster(50, MonsterType.WEREWOLF);
+                break;
+            case ("3"):
+                m1 = new Monster(50, MonsterType.ZOMBIE);
+                break;
+            default:
+                System.out.println("Please select [1]Left, [2]Middle, [3] Right");
+                break;
+        }
 
 
-        Monster randomMonster = new Monster();
+        System.out.println();
+
 
     }
 }
