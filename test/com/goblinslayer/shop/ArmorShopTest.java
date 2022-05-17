@@ -28,4 +28,5 @@ public class ArmorShopTest extends TestCase {
         ArmorShop armor = new ArmorShop();
         System.out.println(armor.findByArmorName("armor"));
     }
+
 }

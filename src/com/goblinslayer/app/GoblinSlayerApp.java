@@ -2,6 +2,7 @@ package com.goblinslayer.app;
 
 import com.goblinslayer.character.Player;
 import com.goblinslayer.character.Weapon;
+import com.goblinslayer.shop.ArmorShop;
 
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -9,10 +10,10 @@ import java.util.concurrent.TimeUnit;
 public class GoblinSlayerApp {
     Player p1 = new Player();
     Scanner scanner = new Scanner(System.in);
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         GoblinSlayerApp app = new GoblinSlayerApp();
-       // app.createPlayer();
-        app.thirdEncounter();
+        // app.createPlayer();
+        // app.shopForArmor();
     }
 
     public void createPlayer(){
@@ -49,6 +50,48 @@ public class GoblinSlayerApp {
         System.out.println("You player's stats are: " + p1.toString());
     }
 
+    public void shopForArmor(){
+        ArmorShop armor = new ArmorShop();
+        boolean choseArmor = true;
+        System.out.println();
+        System.out.println("You decide to stop by the town shop to purchase armor before you embark on your quest to save the princess.");
+        System.out.println();
+        System.out.println("While visiting the shop you notice that there are 4 different sets of armor on the wall");
+        System.out.println();
+        System.out.println(armor.toString());
+
+        while(choseArmor){
+            System.out.println("Which armor do you want to purchase on your quest? Cloth[1], Leather[2], Steel[3], or Gold Plated[4]");
+            String selection = scanner.next();
+            switch(selection){
+                case "1":
+                    p1.setDefense(armor.findById(1).getDefRating());
+                    System.out.println("You chose Cloth Armor");
+                    choseArmor = false;
+                    break;
+                case "2":
+                    p1.setDefense(armor.findById(2).getDefRating());
+                    System.out.println("You chose Leather Armor");
+                    choseArmor = false;
+                    break;
+                case "3":
+                    p1.setDefense(armor.findById(3).getDefRating());
+                    System.out.println("You chose Steel Armor");
+                    choseArmor = false;
+                    break;
+                case "4":
+                    p1.setDefense(armor.findById(4).getDefRating());
+                    System.out.println("You chose Gold Plated Armor");
+                    choseArmor = false;
+                    break;
+                default:
+                    System.out.println("You've decided that you didn't need any armor because you're a hard body.");
+                    choseArmor = false;
+
+            }
+        }
+        System.out.println("You player's stats are: " + p1.toString());
+        }
     public void thirdEncounter() throws InterruptedException {
         // holds the games art
         String rock = "    Rock\n" +
@@ -142,7 +185,7 @@ public class GoblinSlayerApp {
             else if (lostGames == 2){
                 System.out.println(
                         "You Lost to the Goblin King...\n"+
-                        " ________                        ________                    ._._.\n" +
+                                " ________                        ________                    ._._.\n" +
                                 " /  _____/_____    _____   ____   \\_____  \\___  __ ___________| | |\n" +
                                 "/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\ | |\n" +
                                 "\\    \\_\\  \\/ __ \\|  Y Y  \\  ___/  /    |    \\   /\\  ___/|  | \\/\\|\\|\n" +
@@ -153,6 +196,6 @@ public class GoblinSlayerApp {
 
         }
 
-        }
+    }
+    }
 
-}

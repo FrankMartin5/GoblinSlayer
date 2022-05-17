@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-class ArmorShop implements Shop {
+public class ArmorShop implements Shop {
 
 
     private List<Armor> armorInventory = new ArrayList<>(List.of(
@@ -45,6 +45,15 @@ class ArmorShop implements Shop {
             }
         }
         return result;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        for (Armor item: armorInventory) {
+            builder.append(item.getItemName()).append("   ").append("$ ").append(item.getPrice()).append("   ").append("Armor Rating: ").append(item.getDefRating()).append("\n");
+        }
+        return builder.toString();
     }
 
 }
