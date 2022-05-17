@@ -21,7 +21,9 @@ public class Monster extends Character {
     // Business methods
     @Override
     public int attack(Character opponent) {
-        return getMonsterType().getPower();
+        int newHp = opponent.getHp() - getMonsterType().getPower();
+        opponent.setHp(newHp);
+        return newHp;
     }
 
     @Override
