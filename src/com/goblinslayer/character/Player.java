@@ -6,7 +6,7 @@ public class Player extends Character{
     private String name;
     private int hp;
     private Weapon weapon;
-    private Integer defense;
+    private int defense = 0;
 
     public Player() {
     }
@@ -21,20 +21,12 @@ public class Player extends Character{
     // Business Methods
     @Override
     public int attack(Character opponent) {
-        int min = 0;
-        int max = 5;
-        int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
-        // This is the *critical* modifier, adds additional damage on top of power
-        return getWeapon().getPower() + random_int;
+        return getWeapon().getPower();
     }
 
     @Override
     public int defend(){
-        int min = 3;
-        int max = 10;
-        // generates a random defence between 3-10
-        int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
-        return random_int;
+        return defense;
     }
 
     // Accessor Methods
@@ -62,12 +54,22 @@ public class Player extends Character{
         this.weapon = weapon;
     }
 
+    public int getDefense() {
+        return defense;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
     @Override
     public String toString() {
         return "Player: " +
                 "name= " + getName() +
                 ", hp= " + getHp() +
                 ", weapon= " + getWeapon() +
-                ", Power= " + getWeapon().getPower();
+                ", Power= " + getWeapon().getPower() +
+                ", Defense= " + getDefense();
     }
 }
+
