@@ -97,25 +97,27 @@ public class GoblinSlayerApp {
 
     public void thirdEncounter() throws InterruptedException {
         // holds the games art
-        String rock = "    Rock\n" +
+        String rock = "  Rock\n" +
                 "---'   ____)\n" +
                 "      (_____)\n" +
                 "      (_____)\n" +
                 "      (____)\n" +
                 "---.__(___)";
 
-        String paper = "   Paper\n" +
+        String paper = " Paper\n" +
                 "---'   ____)____\n" +
                 "          ______)\n" +
                 "          _______)\n" +
                 "         _______)\n" +
                 "---.__________)";
-        String scissor = "   scissor\n" +
+        String scissor = "Scissor\n" +
+                "    _______\n" +
                 "---'   ____)____\n" +
                 "          ______)\n" +
-                "          _______)\n" +
-                "         _______)\n" +
-                "---.__________)";
+                "       __________)\n" +
+                "      (____)\n" +
+                "---.__(___)\n";
+
         // build up for the game.
         System.out.println("After narrowly escaping defeat at the hands of that monster you finally enter into " +
                 "the goblin kings lair...");
@@ -182,12 +184,13 @@ public class GoblinSlayerApp {
                             "/    \\  \\/ /  _ \\ /    \\  / ___\\_  __ \\__  \\\\   __\\  |  \\  | \\__  \\\\   __\\  |/  _ \\ /    \\ /  ___/ |  /   |   |/  _ \\|  |  \\ \\   \\/\\/   /  |/    \\ |\n" +
                             "\\     \\___(  <_> )   |  \\/ /_/  >  | \\// __ \\|  | |  |  /  |__/ __ \\|  | |  (  <_> )   |  \\\\___ \\ \\|  \\____   (  <_> )  |  /  \\        /|  |   |  \\|\n" +
                             " \\______  /\\____/|___|  /\\___  /|__|  (____  /__| |____/|____(____  /__| |__|\\____/|___|  /____  >__  / ______|\\____/|____/    \\__/\\  / |__|___|  /_\n" +
-                            "        \\/            \\//_____/            \\/                     \\/                    \\/     \\/ \\/  \\/                            \\/          \\/\\/");
+                            "        \\/            \\//_____/            \\/                     \\/                    \\/     \\/ \\/  \\/                            \\/          \\/\\/\n" +
+                            "You defeated the Goblin King, sent him packin', and saved the day!");
                     gameContinue = false;
 
                 } else if (lostGames == 2) {
                     System.out.println(
-                            "You Lost to the Goblin King...\n" +
+                            "You Lost to the Goblin King...He swallowed you whole, and laughed.\n" +
                                     " ________                        ________                    ._._.\n" +
                                     " /  _____/_____    _____   ____   \\_____  \\___  __ ___________| | |\n" +
                                     "/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\ | |\n" +
@@ -202,7 +205,7 @@ public class GoblinSlayerApp {
                 lostGames++;
                 if (lostGames == 2){
                     System.out.println(
-                            "You Lost to the Goblin King...\n" +
+                            "You Lost to the Goblin King...He swallowed you whole, and laughed.\n" +
                                     " ________                        ________                    ._._.\n" +
                                     " /  _____/_____    _____   ____   \\_____  \\___  __ ___________| | |\n" +
                                     "/   \\  ___\\__  \\  /     \\_/ __ \\   /   |   \\  \\/ // __ \\_  __ \\ | |\n" +
