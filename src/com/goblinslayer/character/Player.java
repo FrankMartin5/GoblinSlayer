@@ -7,6 +7,7 @@ public class Player extends Character{
     private int hp;
     private Weapon weapon;
     private int defense = 0;
+    private int wallet = (int) Math.floor(Math.random() * (200 - 50) + 1) + 50;
 
     public Player() {
     }
@@ -60,6 +61,14 @@ public class Player extends Character{
 
     public void setDefense(int defense) {
         this.defense = defense;
+    }
+
+    public int getWallet() {
+        return wallet;
+    }
+
+    public void setWallet(int wallet){
+        this.wallet = wallet;
     }
 
     @Override

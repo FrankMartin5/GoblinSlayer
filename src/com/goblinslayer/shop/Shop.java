@@ -10,5 +10,8 @@ public interface Shop {
 
     public Collection<Armor> listAllArmor();
 
+    public int sellArmor(int money, Integer id);
+
+    public void armorTable();
 
 }
