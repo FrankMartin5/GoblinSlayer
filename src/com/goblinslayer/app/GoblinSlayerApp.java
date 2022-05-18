@@ -35,9 +35,13 @@ public class GoblinSlayerApp {
                 "                       ░                                                     ░ ░                     ");
         TimeUnit.MILLISECONDS.sleep(1500);
         System.out.println("The console based RPG.");
+        System.out.println();
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("The Goblin King has captured your beloved princess, and stolen her away to his cave.\n"
-        + "Your mission is to save her by defeating the Goblin King and his minions.");
+        System.out.println("The Goblin King has captured your beloved princess, and stolen her away to his cave.");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Your mission is to save her by defeating the Goblin King and his minions.");
+        TimeUnit.MILLISECONDS.sleep(2000);
         System.out.println();
 
     }
@@ -86,7 +90,7 @@ public class GoblinSlayerApp {
         System.out.println();
         System.out.println("You decide to stop by the town shop to purchase armor before you embark on your quest to save the princess.");
         System.out.println();
-        TimeUnit.MILLISECONDS.sleep(2500);
+        TimeUnit.MILLISECONDS.sleep(2000);
         System.out.println("While visiting the shop you notice that there are 4 different sets of armor on the wall");
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(2500);
@@ -110,17 +114,11 @@ public class GoblinSlayerApp {
                         if (p1.getWallet() >= armor.findById(1).getPrice()) {
                             change = armor.sellArmor(p1.getWallet(), input);
                             p1.setDefense(armor.findById(1).getDefRating());
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You purchased the cloth armor for $" + armor.findById(1).getPrice() + ". You now have $" + change + " left in your wallet.");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("As you put on your armor you smell a strange but strong odor that reminds you of rat piss.");
-                            System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
-                            System.out.println("You bump into a child as you walk out of the store which results in them running away screaming that you touched them.");
-                            System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(3500);
-                            System.out.println("You are chased out of town.");
                             System.out.println();
                             choseArmor = false;
                         } else {
@@ -131,16 +129,16 @@ public class GoblinSlayerApp {
                         if (p1.getWallet() >= armor.findById(2).getPrice()) {
                             change = armor.sellArmor(p1.getWallet(), input);
                             p1.setDefense(armor.findById(2).getDefRating());
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You purchased the leather armor for $" + armor.findById(2).getPrice() + ". You now have $" + change + " left in your wallet.");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("The fit is tight around the crotch but you should manage.");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("The shop keep smacks your butt and winks at you as you leave the store...");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You feel violated.");
                             System.out.println();
                             choseArmor = false;
@@ -152,16 +150,16 @@ public class GoblinSlayerApp {
                         if (p1.getWallet() >= armor.findById(3).getPrice()) {
                             change = armor.sellArmor(p1.getWallet(), input);
                             p1.setDefense(armor.findById(3).getDefRating());
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You purchased the steel armor for $" + armor.findById(3).getPrice() + ". You now have $" + change + " left in your wallet.");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("Your testosterone boosted 20 fold when you put the armor on.");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You notice the local women in town swooning over you as you leave the store");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You feel like a million shillings.");
                             System.out.println();
                             choseArmor = false;
@@ -173,16 +171,16 @@ public class GoblinSlayerApp {
                         if (p1.getWallet() >= armor.findById(4).getPrice()) {
                             change = armor.sellArmor(p1.getWallet(), input);
                             p1.setDefense(armor.findById(4).getDefRating());
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You purchased the gold plated armor for $" + armor.findById(4).getPrice() + ". You now have $" + change + " left in your wallet.");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("As you put the armor on you grow a full beard, acquire bigger muscle, and notice your voice sounds like Charlie Hunnam");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("The town is blinded by your armor, and all bow down to your brilliance");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You are now a god.");
                             System.out.println();
                             choseArmor = false;
@@ -191,7 +189,7 @@ public class GoblinSlayerApp {
                         }
                         break;
                     case 0:
-                        TimeUnit.MILLISECONDS.sleep(1500);
+                        TimeUnit.MILLISECONDS.sleep(2000);
                         System.out.println("You decided to have no armor because you're a hard body and you know the princess is going to dig that.");
                         choseArmor = false;
                         break;
@@ -202,9 +200,7 @@ public class GoblinSlayerApp {
                 System.out.println("Invalid argument, try to stay in the range of 0-4. Going back to armor selection...");
             }
         }
-        TimeUnit.MILLISECONDS.sleep(2500);
-        System.out.println("Your players defense is now " + p1.getDefense() + ". Now, go save you a princess.");
-        TimeUnit.MILLISECONDS.sleep(2500);
+        TimeUnit.MILLISECONDS.sleep(2000);
     }
 
 
@@ -347,28 +343,28 @@ public class GoblinSlayerApp {
                     //gameContinue = false;
                     lostGames++;
                 } else if (userChoice == 0 && computerChoice == 2) {
-                    System.out.println("Computer chose " + gameImages[computerChoice]);
+                    System.out.println("Goblin King chose " + gameImages[computerChoice]);
                     System.out.println("You chose " + gameImages[userChoice]);
                     System.out.println("You Win this round!");
                     wonGames++;
                 } else if (computerChoice == 0 && userChoice == 2) {
-                    System.out.println("Computer chose " + gameImages[computerChoice]);
+                    System.out.println("Goblin King chose " + gameImages[computerChoice]);
                     System.out.println("You chose " + gameImages[userChoice]);
                     System.out.println("You lost this round!");
                     lostGames++;
                 } else if (computerChoice > userChoice) {
-                    System.out.println("Computer chose " + gameImages[computerChoice]);
+                    System.out.println("Goblin King chose " + gameImages[computerChoice]);
                     System.out.println("You chose " + gameImages[userChoice]);
                     System.out.println("You lost this round!");
                     lostGames++;
                 } else if (userChoice > computerChoice) {
-                    System.out.println("Computer chose " + gameImages[computerChoice]);
+                    System.out.println("Goblin King chose " + gameImages[computerChoice]);
                     System.out.println("You chose " + gameImages[userChoice]);
                     System.out.println("You Win this round!");
                     wonGames++;
 
                 } else if (computerChoice == userChoice) {
-                    System.out.println("Computer chose " + gameImages[computerChoice]);
+                    System.out.println("Goblin King chose " + gameImages[computerChoice]);
                     System.out.println("You chose " + gameImages[userChoice]);
                     System.out.println("Draw try gain..");
                 } else {
