@@ -1,5 +1,7 @@
 package com.goblinslayer.app;
 
+import com.goblinslayer.character.Monster;
+import com.goblinslayer.character.MonsterType;
 import com.goblinslayer.character.Player;
 import com.goblinslayer.character.Weapon;
 import com.goblinslayer.shop.ArmorShop;
@@ -13,8 +15,9 @@ public class GoblinSlayerApp {
 
     public static void main(String[] args) throws InterruptedException {
         GoblinSlayerApp app = new GoblinSlayerApp();
-        // app.createPlayer();
-        // app.shopForArmor();
+        app.createPlayer();
+        app.shopForArmor();
+        app.monsterFight();
         app.thirdEncounter();
     }
 
@@ -92,6 +95,71 @@ public class GoblinSlayerApp {
             }
         }
         System.out.println("You player's stats are: " + p1.toString());
+    }
+
+    public void monsterFight() {
+        Monster monster = new Monster();
+        System.out.println();
+        System.out.println("After stopping by the famed Armor Shop you are now ready to slay Goblins and save the Princess\n");
+        System.out.println("What route will you take as you enter the cave?  [1]Left, [2]Middle, [3] Right");
+
+        String selection = scanner.next();
+        switch (selection) {
+            case ("1"):
+                monster = new Monster(50, MonsterType.GOBLIN);
+                break;
+            case ("2"):
+                monster = new Monster(50, MonsterType.WEREWOLF);
+                break;
+            case ("3"):
+                monster = new Monster(50, MonsterType.ZOMBIE);
+                break;
+            default:
+                System.out.println("Please select [1]Left, [2]Middle, [3] Right");
+                break;
+        }
+
+        System.out.println("Oh No! You ran into a "+ monster.getMonsterType());
+
+        while (monster.getHp() > 0) {
+            System.out.println("\t Your HP: " + p1.getHp());
+            System.out.println("\t "+ monster.getMonsterType() + "'s HP: " + monster.getHp());
+            System.out.println("\n\tWhat would you like to do");
+            System.out.println("\t1. Attack");
+            System.out.println("\t2. Defend");
+
+            String input = scanner.nextLine();
+            if (input.equals("1")) {
+                p1.attack(monster);
+                monster.attack(p1);
+
+                System.out.println("\t You attacked the " + monster.getMonsterType()+".");
+                if (p1.getHp() > 1) {
+                    System.out.println("\t Your current hp is " + p1.getHp());
+                } else if (p1.getHp() < 1) {
+                    System.out.println("Too much damage taken! You're too weak to continue");
+                    p1.setHp(50);
+                    monsterFight();
+                    break;
+                }
+            } else if (input.equals("2")) {
+                p1.defend();
+                monster.attack(p1);
+
+                System.out.println("\t You defended against the " + monster.getMonsterType() +". Monster has " + monster.getHp()+ "left");
+                if (p1.getHp() > 1) {
+                    System.out.println("\t Your current hp is " + p1.getHp());
+                } else if (p1.getHp() < 1) {
+                    System.out.println("Too much damage taken! You're too weak to continue");
+                    p1.setHp(50);
+                    monsterFight();
+                    break;
+                }
+            }
+        }
+        System.out.println();
+        System.out.println("You won the battle!");
+        System.out.println();
     }
 
     public void thirdEncounter() throws InterruptedException {

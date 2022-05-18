@@ -1,9 +1,9 @@
 package com.goblinslayer.character;
 
 public enum MonsterType {
-    GOBLIN(5),
-    ZOMBIE(10),
-    WEREWOLF(100);
+    GOBLIN(10),
+    ZOMBIE(5),
+    WEREWOLF(50);
 
     private int power;
 
