@@ -343,28 +343,28 @@ public class GoblinSlayerApp {
                     //gameContinue = false;
                     lostGames++;
                 } else if (userChoice == 0 && computerChoice == 2) {
-                    System.out.println("Computer chose " + gameImages[computerChoice]);
+                    System.out.println("Goblin King chose " + gameImages[computerChoice]);
                     System.out.println("You chose " + gameImages[userChoice]);
                     System.out.println("You Win this round!");
                     wonGames++;
                 } else if (computerChoice == 0 && userChoice == 2) {
-                    System.out.println("Computer chose " + gameImages[computerChoice]);
+                    System.out.println("Goblin King chose " + gameImages[computerChoice]);
                     System.out.println("You chose " + gameImages[userChoice]);
                     System.out.println("You lost this round!");
                     lostGames++;
                 } else if (computerChoice > userChoice) {
-                    System.out.println("Computer chose " + gameImages[computerChoice]);
+                    System.out.println("Goblin King chose " + gameImages[computerChoice]);
                     System.out.println("You chose " + gameImages[userChoice]);
                     System.out.println("You lost this round!");
                     lostGames++;
                 } else if (userChoice > computerChoice) {
-                    System.out.println("Computer chose " + gameImages[computerChoice]);
+                    System.out.println("Goblin King chose " + gameImages[computerChoice]);
                     System.out.println("You chose " + gameImages[userChoice]);
                     System.out.println("You Win this round!");
                     wonGames++;
 
                 } else if (computerChoice == userChoice) {
-                    System.out.println("Computer chose " + gameImages[computerChoice]);
+                    System.out.println("Goblin King chose " + gameImages[computerChoice]);
                     System.out.println("You chose " + gameImages[userChoice]);
                     System.out.println("Draw try gain..");
                 } else {
