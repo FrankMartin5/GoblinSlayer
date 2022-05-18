@@ -15,10 +15,31 @@ public class GoblinSlayerApp {
 
     public static void main(String[] args) throws InterruptedException {
         GoblinSlayerApp app = new GoblinSlayerApp();
+        app.welcome();
         app.createPlayer();
         app.shopForArmor();
         app.monsterFight();
         app.bossFight();
+    }
+    public void welcome() throws InterruptedException {
+        System.out.println("Welcome to: ");
+        System.out.println("  ▄████  ▒█████   ▄▄▄▄    ██▓     ██▓ ███▄    █      ██████  ██▓    ▄▄▄     ▓██   ██▓▓█████  ██▀███  \n" +
+                " ██▒ ▀█▒▒██▒  ██▒▓█████▄ ▓██▒    ▓██▒ ██ ▀█   █    ▒██    ▒ ▓██▒   ▒████▄    ▒██  ██▒▓█   ▀ ▓██ ▒ ██▒\n" +
+                "▒██░▄▄▄░▒██░  ██▒▒██▒ ▄██▒██░    ▒██▒▓██  ▀█ ██▒   ░ ▓██▄   ▒██░   ▒██  ▀█▄   ▒██ ██░▒███   ▓██ ░▄█ ▒\n" +
+                "░▓█  ██▓▒██   ██░▒██░█▀  ▒██░    ░██░▓██▒  ▐▌██▒     ▒   ██▒▒██░   ░██▄▄▄▄██  ░ ▐██▓░▒▓█  ▄ ▒██▀▀█▄  \n" +
+                "░▒▓███▀▒░ ████▓▒░░▓█  ▀█▓░██████▒░██░▒██░   ▓██░   ▒██████▒▒░██████▒▓█   ▓██▒ ░ ██▒▓░░▒████▒░██▓ ▒██▒\n" +
+                " ░▒   ▒ ░ ▒░▒░▒░ ░▒▓███▀▒░ ▒░▓  ░░▓  ░ ▒░   ▒ ▒    ▒ ▒▓▒ ▒ ░░ ▒░▓  ░▒▒   ▓▒█░  ██▒▒▒ ░░ ▒░ ░░ ▒▓ ░▒▓░\n" +
+                "  ░   ░   ░ ▒ ▒░ ▒░▒   ░ ░ ░ ▒  ░ ▒ ░░ ░░   ░ ▒░   ░ ░▒  ░ ░░ ░ ▒  ░ ▒   ▒▒ ░▓██ ░▒░  ░ ░  ░  ░▒ ░ ▒░\n" +
+                "░ ░   ░ ░ ░ ░ ▒   ░    ░   ░ ░    ▒ ░   ░   ░ ░    ░  ░  ░    ░ ░    ░   ▒   ▒ ▒ ░░     ░     ░░   ░ \n" +
+                "      ░     ░ ░   ░          ░  ░ ░           ░          ░      ░  ░     ░  ░░ ░        ░  ░   ░     \n" +
+                "                       ░                                                     ░ ░                     ");
+        TimeUnit.MILLISECONDS.sleep(1500);
+        System.out.println("The console based RPG.");
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("The Goblin King has captured your beloved princess, and stolen her away to his cave.\n"
+        + "Your mission is to save her by defeating the Goblin King and his minions.");
+        System.out.println();
+
     }
 
     public void createPlayer() {
