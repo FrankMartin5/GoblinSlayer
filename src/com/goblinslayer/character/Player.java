@@ -35,10 +35,10 @@ public class Player extends Character{
             setHp(defend);
             return defend;
         } else {
-            defend = opponent.getMonsterType().getPower() - getDefense() + getHp();
+            defend = getHp() + opponent.getMonsterType().getPower() - getDefense();
             setHp(defend);
-            return defend;
         }
+        return defend;
     }
 
     // Accessor Methods
