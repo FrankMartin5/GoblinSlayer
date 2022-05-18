@@ -13,14 +13,14 @@ public class GoblinSlayerApp {
     Player p1 = new Player();
     Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws InterruptedException {
-        GoblinSlayerApp app = new GoblinSlayerApp();
-        app.welcome();
-        app.createPlayer();
-        app.shopForArmor();
-        app.monsterFight();
-        app.bossFight();
+    public void execute() throws InterruptedException {
+        welcome();
+        createPlayer();
+        shopForArmor();
+        monsterFight();
+        bossFight();
     }
+
     public void welcome() throws InterruptedException {
         System.out.println("Welcome to: ");
         System.out.println("  ▄████  ▒█████   ▄▄▄▄    ██▓     ██▓ ███▄    █      ██████  ██▓    ▄▄▄     ▓██   ██▓▓█████  ██▀███  \n" +
