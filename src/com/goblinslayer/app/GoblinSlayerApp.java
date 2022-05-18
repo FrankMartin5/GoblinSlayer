@@ -42,7 +42,7 @@ public class GoblinSlayerApp {
 
     }
 
-    public void createPlayer() {
+    public void createPlayer() throws InterruptedException {
         boolean badWeapon = true;
         String name;
         System.out.println("Please enter your Name...");
@@ -74,6 +74,8 @@ public class GoblinSlayerApp {
         }
         p1 = new Player(name, 50, p1.getWeapon());
         System.out.println("You player's stats are: " + p1.toString());
+        TimeUnit.MILLISECONDS.sleep(2000);
+
     }
 
     public void shopForArmor() throws InterruptedException {
@@ -200,10 +202,11 @@ public class GoblinSlayerApp {
         }
         TimeUnit.MILLISECONDS.sleep(2500);
         System.out.println("Your players defense is now " + p1.getDefense() + ". Now, go save you a princess.");
+        TimeUnit.MILLISECONDS.sleep(2500);
     }
 
 
-    public void monsterFight() {
+    public void monsterFight() throws InterruptedException {
         Monster monster = new Monster();
         System.out.println();
         System.out.println("After stopping by the famed Armor Shop you are now ready to slay Goblins and save the Princess\n");
@@ -265,9 +268,11 @@ public class GoblinSlayerApp {
         }
         System.out.println();
         System.out.println("You won the battle!\n");
+
     }
 
     public void bossFight() throws InterruptedException {
+
         // holds the games art
         String rock = "  Rock\n" +
                 "---'   ____)\n" +
@@ -291,11 +296,33 @@ public class GoblinSlayerApp {
                 "---.__(___)\n";
 
         // build up for the game.
+        TimeUnit.MILLISECONDS.sleep(3000);
         System.out.println("After narrowly escaping defeat at the hands of that monster you finally enter into " +
                 "the goblin kings lair...");
         TimeUnit.MILLISECONDS.sleep(1500);
-        System.out.println("The Goblin King leers at you, and challenges you to the game for your life.  " +
-                "Rock-Paper-Scissors.  A test fit for a true warrior.");
+        System.out.println("\n" +
+                "                           __,='`````'=/__\n" +
+                "                          '//  (o) \\(o) \\ `'         _,-,\n" +
+                "                          //|     ,_)   (`\\      ,-'`_,-\\\n" +
+                "                        ,-~~~\\  `'==='  /-,      \\==```` \\__\n" +
+                "                       /        `----'     `\\     \\       \\/\n" +
+                "                    ,-`                  ,   \\  ,.-\\       \\\n" +
+                "                   /      ,               \\,-`\\`_,-`\\_,..--'\\\n" +
+                "                  ,`    ,/,              ,>,   )     \\--`````\\\n" +
+                "                  (      `\\`---'`  `-,-'`_,<   \\      \\_,.--'`\n" +
+                "                   `.      `--. _,-'`_,-`  |    \\\n" +
+                "                    [`-.___   <`_,-'`------(    /\n" +
+                "                    (`` _,-\\   \\ --`````````|--`\n" +
+                "                     >-`_,-`\\,-` ,          |\n" +
+                "                   <`_,'     ,  /\\          /\n" +
+                "                    `  \\/\\,-/ `/  \\/`\\_/V\\_/\n" +
+                "                       (  ._. )    ( .__. )\n" +
+                "                       |      |    |      |\n" +
+                "                        \\,---_|    |_---./\n" +
+                "                        ooOO(_)    (_)OOoo");
+        System.out.println("The Goblin King leers at you, and challenges you to the game for your life...");
+        TimeUnit.MILLISECONDS.sleep(2500);
+        System.out.println("Rock-Paper-Scissors, A test fit for a true warrior");
         TimeUnit.MILLISECONDS.sleep((1500));
         System.out.println("Are you ready " + p1.getName() + "?");
 
