@@ -90,7 +90,7 @@ public class GoblinSlayerApp {
         System.out.println();
         System.out.println("You decide to stop by the town shop to purchase armor before you embark on your quest to save the princess.");
         System.out.println();
-        TimeUnit.MILLISECONDS.sleep(2500);
+        TimeUnit.MILLISECONDS.sleep(2000);
         System.out.println("While visiting the shop you notice that there are 4 different sets of armor on the wall");
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(2500);
@@ -114,10 +114,10 @@ public class GoblinSlayerApp {
                         if (p1.getWallet() >= armor.findById(1).getPrice()) {
                             change = armor.sellArmor(p1.getWallet(), input);
                             p1.setDefense(armor.findById(1).getDefRating());
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You purchased the cloth armor for $" + armor.findById(1).getPrice() + ". You now have $" + change + " left in your wallet.");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("As you put on your armor you smell a strange but strong odor that reminds you of rat piss.");
                             System.out.println();
                             choseArmor = false;
@@ -129,16 +129,16 @@ public class GoblinSlayerApp {
                         if (p1.getWallet() >= armor.findById(2).getPrice()) {
                             change = armor.sellArmor(p1.getWallet(), input);
                             p1.setDefense(armor.findById(2).getDefRating());
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You purchased the leather armor for $" + armor.findById(2).getPrice() + ". You now have $" + change + " left in your wallet.");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("The fit is tight around the crotch but you should manage.");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("The shop keep smacks your butt and winks at you as you leave the store...");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You feel violated.");
                             System.out.println();
                             choseArmor = false;
@@ -150,16 +150,16 @@ public class GoblinSlayerApp {
                         if (p1.getWallet() >= armor.findById(3).getPrice()) {
                             change = armor.sellArmor(p1.getWallet(), input);
                             p1.setDefense(armor.findById(3).getDefRating());
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You purchased the steel armor for $" + armor.findById(3).getPrice() + ". You now have $" + change + " left in your wallet.");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("Your testosterone boosted 20 fold when you put the armor on.");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You notice the local women in town swooning over you as you leave the store");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You feel like a million shillings.");
                             System.out.println();
                             choseArmor = false;
@@ -171,16 +171,16 @@ public class GoblinSlayerApp {
                         if (p1.getWallet() >= armor.findById(4).getPrice()) {
                             change = armor.sellArmor(p1.getWallet(), input);
                             p1.setDefense(armor.findById(4).getDefRating());
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You purchased the gold plated armor for $" + armor.findById(4).getPrice() + ". You now have $" + change + " left in your wallet.");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("As you put the armor on you grow a full beard, acquire bigger muscle, and notice your voice sounds like Charlie Hunnam");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("The town is blinded by your armor, and all bow down to your brilliance");
                             System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
+                            TimeUnit.MILLISECONDS.sleep(2000);
                             System.out.println("You are now a god.");
                             System.out.println();
                             choseArmor = false;
@@ -189,7 +189,7 @@ public class GoblinSlayerApp {
                         }
                         break;
                     case 0:
-                        TimeUnit.MILLISECONDS.sleep(1500);
+                        TimeUnit.MILLISECONDS.sleep(2000);
                         System.out.println("You decided to have no armor because you're a hard body and you know the princess is going to dig that.");
                         choseArmor = false;
                         break;
@@ -200,7 +200,7 @@ public class GoblinSlayerApp {
                 System.out.println("Invalid argument, try to stay in the range of 0-4. Going back to armor selection...");
             }
         }
-        TimeUnit.MILLISECONDS.sleep(2500);
+        TimeUnit.MILLISECONDS.sleep(2000);
     }
 
 
