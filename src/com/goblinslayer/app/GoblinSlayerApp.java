@@ -35,9 +35,13 @@ public class GoblinSlayerApp {
                 "                       ░                                                     ░ ░                     ");
         TimeUnit.MILLISECONDS.sleep(1500);
         System.out.println("The console based RPG.");
+        System.out.println();
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("The Goblin King has captured your beloved princess, and stolen her away to his cave.\n"
-        + "Your mission is to save her by defeating the Goblin King and his minions.");
+        System.out.println("The Goblin King has captured your beloved princess, and stolen her away to his cave.");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Your mission is to save her by defeating the Goblin King and his minions.");
+        TimeUnit.MILLISECONDS.sleep(2000);
         System.out.println();
 
     }
@@ -115,12 +119,6 @@ public class GoblinSlayerApp {
                             System.out.println();
                             TimeUnit.MILLISECONDS.sleep(2500);
                             System.out.println("As you put on your armor you smell a strange but strong odor that reminds you of rat piss.");
-                            System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(2500);
-                            System.out.println("You bump into a child as you walk out of the store which results in them running away screaming that you touched them.");
-                            System.out.println();
-                            TimeUnit.MILLISECONDS.sleep(3500);
-                            System.out.println("You are chased out of town.");
                             System.out.println();
                             choseArmor = false;
                         } else {
@@ -202,8 +200,6 @@ public class GoblinSlayerApp {
                 System.out.println("Invalid argument, try to stay in the range of 0-4. Going back to armor selection...");
             }
         }
-        TimeUnit.MILLISECONDS.sleep(2500);
-        System.out.println("Your players defense is now " + p1.getDefense() + ". Now, go save you a princess.");
         TimeUnit.MILLISECONDS.sleep(2500);
     }
 
