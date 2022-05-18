@@ -19,7 +19,7 @@ public class GoblinSlayerApp {
         app.createPlayer();
         app.shopForArmor();
         app.monsterFight();
-        app.bossFight();
+//        app.bossFight();
     }
     public void welcome() throws InterruptedException {
         System.out.println("Welcome to: ");
@@ -70,6 +70,8 @@ public class GoblinSlayerApp {
                     break;
                 default:
                     p1.setWeapon(Weapon.STICK);
+                    badWeapon = false;
+                    break;
             }
         }
         p1 = new Player(name, 50, p1.getWeapon());
@@ -84,13 +86,13 @@ public class GoblinSlayerApp {
         System.out.println();
         System.out.println("You decide to stop by the town shop to purchase armor before you embark on your quest to save the princess.");
         System.out.println();
-        TimeUnit.MILLISECONDS.sleep(2500);
+//        TimeUnit.MILLISECONDS.sleep(2500);
         System.out.println("While visiting the shop you notice that there are 4 different sets of armor on the wall");
         System.out.println();
-        TimeUnit.MILLISECONDS.sleep(2500);
+//        TimeUnit.MILLISECONDS.sleep(2500);
         armor.armorTable();
         System.out.println();
-        TimeUnit.MILLISECONDS.sleep(2500);
+//        TimeUnit.MILLISECONDS.sleep(2500);
         System.out.println("The current amount in your wallet is: $" + p1.getWallet());
 
 
@@ -251,7 +253,7 @@ public class GoblinSlayerApp {
                     break;
                 }
             } else if (input.equals("2")) {
-                p1.defend();
+                p1.defend(monster);
                 monster.attack(p1);
 
                 System.out.println("\t You defended against the " + monster.getMonsterType() + ". Monster has " + monster.getHp() + "left.");

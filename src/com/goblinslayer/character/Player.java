@@ -28,10 +28,17 @@ public class Player extends Character{
     }
 
     @Override
-    public int defend(){
-        int defend = getHp() + getDefense();
-        setHp(defend);
-        return defend;
+    public int defend(Monster opponent){
+        int defend = 0;
+        if (getDefense() >= opponent.getMonsterType().getPower()) {
+            defend = opponent.getMonsterType().getPower() + getHp();
+            setHp(defend);
+            return defend;
+        } else {
+            defend = opponent.getMonsterType().getPower() - getDefense() + getHp();
+            setHp(defend);
+            return defend;
+        }
     }
 
     // Accessor Methods

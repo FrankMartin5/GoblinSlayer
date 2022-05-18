@@ -22,6 +22,6 @@ public class PlayerTest {
 
     @Test
     public void testDefend() {
-        assertEquals(0, player.defend());
+        assertEquals(0, player.defend(monster));
     }
 }

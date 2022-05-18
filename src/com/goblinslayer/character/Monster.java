@@ -27,7 +27,7 @@ public class Monster extends Character {
     }
 
     @Override
-    public int defend() {
+    public int defend(Monster opponent) {
         return defense;
     }
 
