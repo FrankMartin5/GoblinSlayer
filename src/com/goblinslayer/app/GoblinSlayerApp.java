@@ -380,7 +380,7 @@ public class GoblinSlayerApp {
                             "\\     \\___(  <_> )   |  \\/ /_/  >  | \\// __ \\|  | |  |  /  |__/ __ \\|  | |  (  <_> )   |  \\\\___ \\ \\|  \\____   (  <_> )  |  /  \\        /|  |   |  \\|\n" +
                             " \\______  /\\____/|___|  /\\___  /|__|  (____  /__| |____/|____(____  /__| |__|\\____/|___|  /____  >__  / ______|\\____/|____/    \\__/\\  / |__|___|  /_\n" +
                             "        \\/            \\//_____/            \\/                     \\/                    \\/     \\/ \\/  \\/                            \\/          \\/\\/\n" +
-                            "You defeated the Goblin King, sent him packin', and saved the day!");
+                            "You defeated the Goblin King, sent him packin', and saved the princess!");
                     gameContinue = false;
 
                 } else if (lostGames == 2) {
