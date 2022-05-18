@@ -70,6 +70,8 @@ public class GoblinSlayerApp {
                     break;
                 default:
                     p1.setWeapon(Weapon.STICK);
+                    badWeapon = false;
+                    break;
             }
         }
         p1 = new Player(name, 50, p1.getWeapon());
@@ -209,7 +211,7 @@ public class GoblinSlayerApp {
     public void monsterFight() throws InterruptedException {
         Monster monster = new Monster();
         System.out.println();
-        System.out.println("After stopping by the famed Armor Shop you are now ready to slay Goblins and save the Princess\n");
+        System.out.println("After stopping by the famed Armor Shop you stumbled upon the cave the princess is being held.\n");
         System.out.println("What route will you take as you enter the cave?  [1]Left, [2]Middle, [3] Right");
 
         String selection = scanner.next();
@@ -251,10 +253,10 @@ public class GoblinSlayerApp {
                     break;
                 }
             } else if (input.equals("2")) {
-                p1.defend();
+                p1.defend(monster);
                 monster.attack(p1);
 
-                System.out.println("\t You defended against the " + monster.getMonsterType() + ". Monster has " + monster.getHp() + "left.");
+                System.out.println("\t You defended against the " + monster.getMonsterType() + ". Monster has " + monster.getHp() + " HP left.");
                 if (p1.getHp() > 1) {
                     System.out.println("\t Your current hp is " + p1.getHp()+".");
                     System.out.println();

@@ -11,7 +11,7 @@ public abstract class Character {
     // Abstract Methods
     public abstract int attack(Character opponent);
 
-    public abstract int defend();
+    public abstract int defend(Monster opponent);
 
     public int getHp() {
         return hp;

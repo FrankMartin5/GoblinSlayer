@@ -18,9 +18,5 @@ public class MonsterTest {
         assertEquals(100, monster.attack(monster));
     }
 
-    @Test
-    public void testDefend() {
-        assertEquals(5, monster.defend());
-    }
 
 }

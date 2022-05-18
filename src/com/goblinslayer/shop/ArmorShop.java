@@ -11,7 +11,7 @@ public class ArmorShop implements Shop {
             new Armor(1, "Cloth Armor", 20, 5),
             new Armor(2, "Leather Armor", 50, 10),
             new Armor(3, "Steel Armor", 100, 15),
-            new Armor(4, "Gold Plated Armor", 200, 20)
+            new Armor(4, "Gold Plated Armor", 200, 60)
     ));
 
 

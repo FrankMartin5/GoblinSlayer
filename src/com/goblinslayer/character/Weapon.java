@@ -5,7 +5,7 @@ public enum Weapon {
     AXE(25),
     CLUB(15),
     STAFF(20),
-    STICK(1);
+    STICK(50);
 
     private int power;
 
