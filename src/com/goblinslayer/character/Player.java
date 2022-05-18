@@ -22,12 +22,16 @@ public class Player extends Character{
     // Business Methods
     @Override
     public int attack(Character opponent) {
-        return getWeapon().getPower();
+        int newHp = opponent.getHp() - getWeapon().getPower();
+        opponent.setHp(newHp);
+        return newHp;
     }
 
     @Override
     public int defend(){
-        return defense;
+        int defend = getHp() + getDefense();
+        setHp(defend);
+        return defend;
     }
 
     // Accessor Methods
