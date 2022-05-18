@@ -18,7 +18,7 @@ public class GoblinSlayerApp {
         app.createPlayer();
         app.shopForArmor();
         app.monsterFight();
-        app.thirdEncounter();
+        app.bossFight();
     }
 
     public void createPlayer() {
@@ -72,142 +72,115 @@ public class GoblinSlayerApp {
 
 
         while (choseArmor) {
-            System.out.println("Which armor do you want to purchase on your quest? Cloth[1], Leather[2], Steel[3], or Gold Plated[4]");
-            String selection = scanner.next();
-            switch (selection) {
-                case "1":
-                    p1.setDefense(armor.findById(1).getDefRating());
-                    System.out.println("You chose Cloth Armor");
-                    choseArmor = false;
-                    break;
-                case "2":
-                    p1.setDefense(armor.findById(2).getDefRating());
-                    System.out.println("You chose Leather Armor");
-                    choseArmor = false;
-                    break;
-                case "3":
-                    p1.setDefense(armor.findById(3).getDefRating());
-                    System.out.println("You chose Steel Armor");
-                    choseArmor = false;
-                    break;
-                case "4":
-                    p1.setDefense(armor.findById(4).getDefRating());
-                    System.out.println("You chose Gold Plated Armor");
-                    choseArmor = false;
-                    break;
-                default:
-                    System.out.println("You've decided that you didn't need any armor because you're a hard body.");
-                    choseArmor = false;
-
-                    try {
-                        int change = 0;
-                        TimeUnit.MILLISECONDS.sleep(2500);
-                        System.out.println();
-                        System.out.println("Which armor do you want to purchase on your quest?  Cloth[1], Leather[2], Steel[3], Gold Plated[4], or No Armor[0] (in case you really want to impress the princess when you save her.)");
-                        System.out.println();
-                        System.out.println("Enter your selection here: ");
-                        int input = Integer.parseInt(scanner.next());
-                        switch (input) {
-                            case 1:
-                                if (p1.getWallet() >= armor.findById(1).getPrice()) {
-                                    change = armor.sellArmor(p1.getWallet(), input);
-                                    p1.setDefense(armor.findById(1).getDefRating());
-                                    TimeUnit.MILLISECONDS.sleep(2500);
-                                    System.out.println("You purchased the cloth armor for $" + armor.findById(1).getPrice() + ". You now have $" + change + " left in your wallet.");
-                                    System.out.println();
-                                    TimeUnit.MILLISECONDS.sleep(2500);
-                                    System.out.println("As you put on your armor you smell a strange but strong odor that reminds you of rat piss.");
-                                    System.out.println();
-                                    TimeUnit.MILLISECONDS.sleep(2500);
-                                    System.out.println("You bump into a child as you walk out of the store which results in them running away screaming that you touched them.");
-                                    System.out.println();
-                                    TimeUnit.MILLISECONDS.sleep(3500);
-                                    System.out.println("You are chased out of town.");
-                                    System.out.println();
-                                    choseArmor = false;
-                                } else {
-                                    System.out.println("You can't afford this armor! You only have $" + p1.getWallet() + "! Going back to armor selection...");
-                                }
-                                break;
-                            case 2:
-                                if (p1.getWallet() >= armor.findById(2).getPrice()) {
-                                    change = armor.sellArmor(p1.getWallet(), input);
-                                    p1.setDefense(armor.findById(2).getDefRating());
-                                    TimeUnit.MILLISECONDS.sleep(2500);
-                                    System.out.println("You purchased the leather armor for $" + armor.findById(2).getPrice() + ". You now have $" + change + " left in your wallet.");
-                                    System.out.println();
-                                    TimeUnit.MILLISECONDS.sleep(2500);
-                                    System.out.println("The fit is tight around the crotch but you should manage.");
-                                    System.out.println();
-                                    TimeUnit.MILLISECONDS.sleep(2500);
-                                    System.out.println("The shop keep smacks your butt and winks at you as you leave the store...");
-                                    System.out.println();
-                                    TimeUnit.MILLISECONDS.sleep(2500);
-                                    System.out.println("You feel violated.");
-                                    System.out.println();
-                                    choseArmor = false;
-                                } else {
-                                    System.out.println("You can't afford this armor! You only have $" + p1.getWallet() + "! Going back to armor selection...");
-                                }
-                                break;
-                            case 3:
-                                if (p1.getWallet() >= armor.findById(3).getPrice()) {
-                                    change = armor.sellArmor(p1.getWallet(), input);
-                                    p1.setDefense(armor.findById(3).getDefRating());
-                                    TimeUnit.MILLISECONDS.sleep(2500);
-                                    System.out.println("You purchased the steel armor for $" + armor.findById(3).getPrice() + ". You now have $" + change + " left in your wallet.");
-                                    System.out.println();
-                                    TimeUnit.MILLISECONDS.sleep(2500);
-                                    System.out.println("Your testosterone boosted 20 fold when you put the armor on.");
-                                    System.out.println();
-                                    TimeUnit.MILLISECONDS.sleep(2500);
-                                    System.out.println("You notice the local women in town swooning over you as you leave the store");
-                                    System.out.println();
-                                    TimeUnit.MILLISECONDS.sleep(2500);
-                                    System.out.println("You feel like a million shillings.");
-                                    System.out.println();
-                                    choseArmor = false;
-                                } else {
-                                    System.out.println("You can't afford this armor! You only have $" + p1.getWallet() + "! Going back to armor selection...");
-                                }
-                                break;
-                            case 4:
-                                if (p1.getWallet() >= armor.findById(4).getPrice()) {
-                                    change = armor.sellArmor(p1.getWallet(), input);
-                                    p1.setDefense(armor.findById(4).getDefRating());
-                                    TimeUnit.MILLISECONDS.sleep(2500);
-                                    System.out.println("You purchased the gold plated armor for $" + armor.findById(4).getPrice() + ". You now have $" + change + " left in your wallet.");
-                                    System.out.println();
-                                    TimeUnit.MILLISECONDS.sleep(2500);
-                                    System.out.println("As you put the armor on you grow a full beard, acquire bigger muscle, and notice your voice sounds like Charlie Hunnam");
-                                    System.out.println();
-                                    TimeUnit.MILLISECONDS.sleep(2500);
-                                    System.out.println("The town is blinded by your armor, and all bow down to your brilliance");
-                                    System.out.println();
-                                    TimeUnit.MILLISECONDS.sleep(2500);
-                                    System.out.println("You are now a god.");
-                                    System.out.println();
-                                    choseArmor = false;
-                                } else {
-                                    System.out.println("You can't afford this armor! You only have $" + p1.getWallet() + "! Going back to armor selection...");
-                                }
-                                break;
-                            case 0:
-                                TimeUnit.MILLISECONDS.sleep(1500);
-                                System.out.println("You decided to have no armor because you're a hard body and you know the princess is going to dig that.");
-                                choseArmor = false;
-                                break;
-                            default:
-                                System.out.println("Invalid argument, try to stay in the range of 0-4. Going back to armor selection...");
+            try {
+                int change = 0;
+                TimeUnit.MILLISECONDS.sleep(2500);
+                System.out.println();
+                System.out.println("Which armor do you want to purchase on your quest?  Cloth[1], Leather[2], Steel[3], Gold Plated[4], or No Armor[0] (in case you really want to impress the princess when you save her.)");
+                System.out.println();
+                System.out.println("Enter your selection here: ");
+                int input = Integer.parseInt(scanner.next());
+                switch (input) {
+                    case 1:
+                        if (p1.getWallet() >= armor.findById(1).getPrice()) {
+                            change = armor.sellArmor(p1.getWallet(), input);
+                            p1.setDefense(armor.findById(1).getDefRating());
+                            TimeUnit.MILLISECONDS.sleep(2500);
+                            System.out.println("You purchased the cloth armor for $" + armor.findById(1).getPrice() + ". You now have $" + change + " left in your wallet.");
+                            System.out.println();
+                            TimeUnit.MILLISECONDS.sleep(2500);
+                            System.out.println("As you put on your armor you smell a strange but strong odor that reminds you of rat piss.");
+                            System.out.println();
+                            TimeUnit.MILLISECONDS.sleep(2500);
+                            System.out.println("You bump into a child as you walk out of the store which results in them running away screaming that you touched them.");
+                            System.out.println();
+                            TimeUnit.MILLISECONDS.sleep(3500);
+                            System.out.println("You are chased out of town.");
+                            System.out.println();
+                            choseArmor = false;
+                        } else {
+                            System.out.println("You can't afford this armor! You only have $" + p1.getWallet() + "! Going back to armor selection...");
                         }
-                    } catch (IllegalArgumentException e) {
+                        break;
+                    case 2:
+                        if (p1.getWallet() >= armor.findById(2).getPrice()) {
+                            change = armor.sellArmor(p1.getWallet(), input);
+                            p1.setDefense(armor.findById(2).getDefRating());
+                            TimeUnit.MILLISECONDS.sleep(2500);
+                            System.out.println("You purchased the leather armor for $" + armor.findById(2).getPrice() + ". You now have $" + change + " left in your wallet.");
+                            System.out.println();
+                            TimeUnit.MILLISECONDS.sleep(2500);
+                            System.out.println("The fit is tight around the crotch but you should manage.");
+                            System.out.println();
+                            TimeUnit.MILLISECONDS.sleep(2500);
+                            System.out.println("The shop keep smacks your butt and winks at you as you leave the store...");
+                            System.out.println();
+                            TimeUnit.MILLISECONDS.sleep(2500);
+                            System.out.println("You feel violated.");
+                            System.out.println();
+                            choseArmor = false;
+                        } else {
+                            System.out.println("You can't afford this armor! You only have $" + p1.getWallet() + "! Going back to armor selection...");
+                        }
+                        break;
+                    case 3:
+                        if (p1.getWallet() >= armor.findById(3).getPrice()) {
+                            change = armor.sellArmor(p1.getWallet(), input);
+                            p1.setDefense(armor.findById(3).getDefRating());
+                            TimeUnit.MILLISECONDS.sleep(2500);
+                            System.out.println("You purchased the steel armor for $" + armor.findById(3).getPrice() + ". You now have $" + change + " left in your wallet.");
+                            System.out.println();
+                            TimeUnit.MILLISECONDS.sleep(2500);
+                            System.out.println("Your testosterone boosted 20 fold when you put the armor on.");
+                            System.out.println();
+                            TimeUnit.MILLISECONDS.sleep(2500);
+                            System.out.println("You notice the local women in town swooning over you as you leave the store");
+                            System.out.println();
+                            TimeUnit.MILLISECONDS.sleep(2500);
+                            System.out.println("You feel like a million shillings.");
+                            System.out.println();
+                            choseArmor = false;
+                        } else {
+                            System.out.println("You can't afford this armor! You only have $" + p1.getWallet() + "! Going back to armor selection...");
+                        }
+                        break;
+                    case 4:
+                        if (p1.getWallet() >= armor.findById(4).getPrice()) {
+                            change = armor.sellArmor(p1.getWallet(), input);
+                            p1.setDefense(armor.findById(4).getDefRating());
+                            TimeUnit.MILLISECONDS.sleep(2500);
+                            System.out.println("You purchased the gold plated armor for $" + armor.findById(4).getPrice() + ". You now have $" + change + " left in your wallet.");
+                            System.out.println();
+                            TimeUnit.MILLISECONDS.sleep(2500);
+                            System.out.println("As you put the armor on you grow a full beard, acquire bigger muscle, and notice your voice sounds like Charlie Hunnam");
+                            System.out.println();
+                            TimeUnit.MILLISECONDS.sleep(2500);
+                            System.out.println("The town is blinded by your armor, and all bow down to your brilliance");
+                            System.out.println();
+                            TimeUnit.MILLISECONDS.sleep(2500);
+                            System.out.println("You are now a god.");
+                            System.out.println();
+                            choseArmor = false;
+                        } else {
+                            System.out.println("You can't afford this armor! You only have $" + p1.getWallet() + "! Going back to armor selection...");
+                        }
+                        break;
+                    case 0:
+                        TimeUnit.MILLISECONDS.sleep(1500);
+                        System.out.println("You decided to have no armor because you're a hard body and you know the princess is going to dig that.");
+                        choseArmor = false;
+                        break;
+                    default:
                         System.out.println("Invalid argument, try to stay in the range of 0-4. Going back to armor selection...");
-                    }
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.println("Invalid argument, try to stay in the range of 0-4. Going back to armor selection...");
             }
-            TimeUnit.MILLISECONDS.sleep(2500);
-            System.out.println("Your players defense is now " + p1.getDefense() + ". Now, go save you a princess.");
         }
+        TimeUnit.MILLISECONDS.sleep(2500);
+        System.out.println("Your players defense is now " + p1.getDefense() + ". Now, go save you a princess.");
     }
+
 
     public void monsterFight() {
         Monster monster = new Monster();
@@ -231,25 +204,24 @@ public class GoblinSlayerApp {
                 break;
         }
 
-        System.out.println("Oh No! You ran into a "+ monster.getMonsterType());
+        System.out.println("Oh No! You ran into a " + monster.getMonsterType());
 
         while (monster.getHp() > 0) {
-            System.out.println("\t Your HP: " + p1.getHp());
-            System.out.println("\t "+ monster.getMonsterType() + "'s HP: " + monster.getHp());
-            System.out.println("\n\tWhat would you like to do");
-            System.out.println("\t1. Attack");
-            System.out.println("\t2. Defend");
+            System.out.println("\t What would you like to do? [1]Attack or [2] Defend");
+            System.out.println("\t Your current stats are HP:" + p1.getHp() + " Power: " + p1.getWeapon().getPower()+".");
+            System.out.println("\t "+ monster.getMonsterType() + " stats are " + "HP: "+ monster.getHp() +" "+ "Power: "+monster.getMonsterType().getPower()+".");
 
-            String input = scanner.nextLine();
+            String input = scanner.next();
             if (input.equals("1")) {
                 p1.attack(monster);
                 monster.attack(p1);
 
-                System.out.println("\t You attacked the " + monster.getMonsterType()+".");
+                System.out.println("\t You attacked the " + monster.getMonsterType() + ".");
                 if (p1.getHp() > 1) {
-                    System.out.println("\t Your current hp is " + p1.getHp());
+                    System.out.println("\t Your current hp is " + p1.getHp()+".");
+                    System.out.println();
                 } else if (p1.getHp() < 1) {
-                    System.out.println("Too much damage taken! You're too weak to continue");
+                    System.out.println("Oh no, this monster was too strong! You blacked out and woke up in front of the cave.\n");
                     p1.setHp(50);
                     monsterFight();
                     break;
@@ -258,11 +230,12 @@ public class GoblinSlayerApp {
                 p1.defend();
                 monster.attack(p1);
 
-                System.out.println("\t You defended against the " + monster.getMonsterType() +". Monster has " + monster.getHp()+ "left");
+                System.out.println("\t You defended against the " + monster.getMonsterType() + ". Monster has " + monster.getHp() + "left.");
                 if (p1.getHp() > 1) {
-                    System.out.println("\t Your current hp is " + p1.getHp());
+                    System.out.println("\t Your current hp is " + p1.getHp()+".");
+                    System.out.println();
                 } else if (p1.getHp() < 1) {
-                    System.out.println("Too much damage taken! You're too weak to continue");
+                    System.out.println("Oh no, this monster was too strong! You blacked out and woke up in front of the cave.\n");
                     p1.setHp(50);
                     monsterFight();
                     break;
@@ -270,11 +243,10 @@ public class GoblinSlayerApp {
             }
         }
         System.out.println();
-        System.out.println("You won the battle!");
-        System.out.println();
+        System.out.println("You won the battle!\n");
     }
 
-    public void thirdEncounter() throws InterruptedException {
+    public void bossFight() throws InterruptedException {
         // holds the games art
         String rock = "  Rock\n" +
                 "---'   ____)\n" +
