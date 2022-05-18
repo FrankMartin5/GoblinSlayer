@@ -7,7 +7,6 @@ public class Player extends Character{
     private int hp;
     private Weapon weapon;
     private int defense = 0;
-    private int wallet;
 
     public Player() {
     }
@@ -29,7 +28,9 @@ public class Player extends Character{
 
     @Override
     public int defend(){
-        return defense;
+        int defend = getHp() + getDefense();
+        setHp(defend);
+        return defend;
     }
 
     // Accessor Methods
@@ -63,14 +64,6 @@ public class Player extends Character{
 
     public void setDefense(int defense) {
         this.defense = defense;
-    }
-
-    public int getWallet() {
-        return wallet;
-    }
-
-    public void setWallet(int wallet) {
-        this.wallet = wallet;
     }
 
     @Override

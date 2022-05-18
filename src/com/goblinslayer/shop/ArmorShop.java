@@ -10,8 +10,8 @@ public class ArmorShop implements Shop {
     private List<Armor> armorInventory = new ArrayList<>(List.of(
             new Armor(1, "Cloth Armor", 20.00, 5),
             new Armor(2, "Leather Armor", 50.00, 10),
-            new Armor(3, "Steel Armor", 100.00, 50),
-            new Armor(4, "Gold Plated Armor", 200.00, 60)
+            new Armor(3, "Steel Armor", 100.00, 15),
+            new Armor(4, "Gold Plated Armor", 200.00, 20)
     ));
 
 

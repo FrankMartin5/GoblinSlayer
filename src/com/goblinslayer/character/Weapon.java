@@ -1,10 +1,10 @@
 package com.goblinslayer.character;
 
 public enum Weapon {
-    SWORD(13),
-    AXE(15),
-    CLUB(10),
-    STAFF(12),
+    SWORD(20),
+    AXE(25),
+    CLUB(15),
+    STAFF(20),
     STICK(1);
 
     private int power;
