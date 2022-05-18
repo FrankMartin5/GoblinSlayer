@@ -230,7 +230,7 @@ public class GoblinSlayerApp {
 
         while (monster.getHp() > 0) {
             System.out.println("\t What would you like to do? [1]Attack or [2] Defend");
-            System.out.println("\t Your current stats are HP:" + p1.getHp() + " Power: " + p1.getWeapon().getPower()+".");
+            System.out.println("\t Your current stats are HP: " + p1.getHp() + " Power: " + p1.getWeapon().getPower()+" Def: "+p1.getDefense());
             System.out.println("\t "+ monster.getMonsterType() + " stats are " + "HP: "+ monster.getHp() +" "+ "Power: "+monster.getMonsterType().getPower()+".");
 
             String input = scanner.next();
@@ -264,9 +264,7 @@ public class GoblinSlayerApp {
                 }
             }
         }
-        System.out.println();
-        System.out.println("You won the battle!\n");
-
+        System.out.println("\nYou won the battle!\n");
     }
 
     public void bossFight() throws InterruptedException {
