@@ -13,14 +13,14 @@ public class GoblinSlayerApp {
     Player p1 = new Player();
     Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws InterruptedException {
-        GoblinSlayerApp app = new GoblinSlayerApp();
-        app.welcome();
-        app.createPlayer();
-        app.shopForArmor();
-        app.monsterFight();
-        app.bossFight();
+    public void execute() throws InterruptedException {
+        welcome();
+        createPlayer();
+        shopForArmor();
+        monsterFight();
+        bossFight();
     }
+
     public void welcome() throws InterruptedException {
         System.out.println("Welcome to: ");
         System.out.println("  ▄████  ▒█████   ▄▄▄▄    ██▓     ██▓ ███▄    █      ██████  ██▓    ▄▄▄     ▓██   ██▓▓█████  ██▀███  \n" +
@@ -380,7 +380,7 @@ public class GoblinSlayerApp {
                             "\\     \\___(  <_> )   |  \\/ /_/  >  | \\// __ \\|  | |  |  /  |__/ __ \\|  | |  (  <_> )   |  \\\\___ \\ \\|  \\____   (  <_> )  |  /  \\        /|  |   |  \\|\n" +
                             " \\______  /\\____/|___|  /\\___  /|__|  (____  /__| |____/|____(____  /__| |__|\\____/|___|  /____  >__  / ______|\\____/|____/    \\__/\\  / |__|___|  /_\n" +
                             "        \\/            \\//_____/            \\/                     \\/                    \\/     \\/ \\/  \\/                            \\/          \\/\\/\n" +
-                            "You defeated the Goblin King, sent him packin', and saved the day!");
+                            "You defeated the Goblin King, sent him packin', and saved the princess!");
                     gameContinue = false;
 
                 } else if (lostGames == 2) {
