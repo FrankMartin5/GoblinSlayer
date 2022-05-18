@@ -8,17 +8,17 @@ public class ArmorShop implements Shop {
 
 
     private List<Armor> armorInventory = new ArrayList<>(List.of(
-            new Armor(1, "Cloth Armor", 20.00, 5),
-            new Armor(2, "Leather Armor", 50.00, 10),
-            new Armor(3, "Steel Armor", 100.00, 15),
-            new Armor(4, "Gold Plated Armor", 200.00, 20)
+            new Armor(1, "Cloth Armor", 20, 5),
+            new Armor(2, "Leather Armor", 50, 10),
+            new Armor(3, "Steel Armor", 100, 15),
+            new Armor(4, "Gold Plated Armor", 200, 20)
     ));
 
 
     @Override
     public Collection<Armor> listAllArmor() {
         Collection<Armor> result = new ArrayList<>();
-        for (Armor item: armorInventory){
+        for (Armor item : armorInventory) {
             result.add(item);
         }
         return result;
@@ -48,12 +48,26 @@ public class ArmorShop implements Shop {
     }
 
     @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        for (Armor item: armorInventory) {
-            builder.append(item.getItemName()).append("   ").append("$ ").append(item.getPrice()).append("   ").append("Armor Rating: ").append(item.getDefRating()).append("\n");
+    public void armorTable(){
+        System.out.println("------------------------------------------------------------------");
+        System.out.printf("%20s %10s %20s", "NAME", "PRICE", "DEFENSE RATING");
+        System.out.println();
+        System.out.println("------------------------------------------------------------------");
+        for(Armor armor: armorInventory){
+            System.out.format("%20s %10s %20d", armor.getItemName(), "$" + armor.getPrice(), armor.getDefRating());
+            System.out.println();
         }
-        return builder.toString();
+        System.out.println("------------------------------------------------------------------");
     }
 
+    @Override
+    public int sellArmor(int money, Integer id) {
+        int result = 0;
+        double armorPrice = findById(id).getPrice();
+        if (money >= armorPrice) {
+            result = (int) (money - armorPrice);
+        }
+
+        return result;
+    }
 }

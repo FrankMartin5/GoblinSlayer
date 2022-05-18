@@ -7,7 +7,7 @@ public class Armor {
     // Fields
     private Integer id;
     private String itemName;
-    private Double price;
+    private Integer price;
     private Integer defRating;
 
     // Constructors
@@ -15,7 +15,7 @@ public class Armor {
         this.id = id;
     }
 
-    public Armor(Integer id, String itemName, Double price, Integer defRating) {
+    public Armor(Integer id, String itemName, Integer price, Integer defRating) {
         this(id);
         this.itemName = itemName;
         this.price = price;
@@ -39,11 +39,11 @@ public class Armor {
         this.itemName = itemName;
     }
 
-    public Double getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
