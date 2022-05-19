@@ -17,6 +17,9 @@ public class GoblinSlayerApp {
     String gobKing = Files.readString(Path.of("resources", "gob"));
     String gameWin = Files.readString(Path.of("resources", "gameWin"));
     String gameLost = Files.readString(Path.of("resources", "gameLost"));
+    String rock1 = Files.readString(Path.of("resources", "rock"));
+    String paper1 = Files.readString(Path.of("resources", "paper"));
+    String scissor1 = Files.readString(Path.of("resources", "scissor"));
 
     Player p1 = new Player();
     Scanner scanner = new Scanner(System.in);
@@ -276,26 +279,10 @@ public class GoblinSlayerApp {
     public void bossFight() throws InterruptedException {
 
         // holds the games art
-        String rock = "  Rock\n" +
-                "---'   ____)\n" +
-                "      (_____)\n" +
-                "      (_____)\n" +
-                "      (____)\n" +
-                "---.__(___)";
+        String rock = rock1;
 
-        String paper = " Paper\n" +
-                "---'   ____)____\n" +
-                "          ______)\n" +
-                "          _______)\n" +
-                "         _______)\n" +
-                "---.__________)";
-        String scissor = "Scissor\n" +
-                "    _______\n" +
-                "---'   ____)____\n" +
-                "          ______)\n" +
-                "       __________)\n" +
-                "      (____)\n" +
-                "---.__(___)\n";
+        String paper = paper1;
+        String scissor = scissor1;
 
         // build up for the game.
         TimeUnit.MILLISECONDS.sleep(3000);
