@@ -222,7 +222,10 @@ public class GoblinSlayerApp {
                 monster = new Monster(50, MonsterType.ZOMBIE);
                 break;
             default:
-                System.out.println("Please select [1]Left, [2]Middle, [3] Right");
+                //System.out.println("Please select [1]Left, [2]Middle, [3] Right");
+                System.out.println("In your confusion on selecting a path, you wondered aimlessly into the middle path.");
+                monster = new Monster(50,MonsterType.WEREWOLF);
+                System.out.println();
                 break;
         }
 
